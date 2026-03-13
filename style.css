@@ -1,0 +1,322 @@
+/* ============================================
+   HENRI ALLAUX — style.css
+   ============================================ */
+
+:root {
+  --bordeaux:      #6b1a2a;
+  --bordeaux-dark: #4a1020;
+  --vert:          #2d5a3d;
+  --texte:         #2a2a2a;
+  --texte-doux:    #666666;
+  --blanc:         #ffffff;
+}
+
+/* --- Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  background-color: var(--blanc);
+  font-family: 'Poppins', sans-serif;
+  color: var(--texte);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1, h2, h3 { font-weight: 700; }
+h1 { font-size: 2rem;  margin-bottom: 16px; }
+h2 { font-size: 1.6rem; margin-bottom: 24px; }
+h3 { font-size: 1rem;  margin-bottom: 8px; }
+
+a {
+  color: var(--vert);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover { color: var(--bordeaux); }
+
+
+/* ============================================
+   MISE EN PAGE — blocs centrés
+   ============================================ */
+#presentation,
+#ecole {
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 12px;
+  padding: 60px 50px;
+  text-align: center;
+}
+
+#passions,
+#liens {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+
+/* ============================================
+   BLOC 1 — PRÉSENTATION  (bordeaux)
+   ============================================ */
+#presentation {
+  background-color: var(--bordeaux-dark);
+  color: #f0ece8;
+  /* Animation d'entrée */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+#presentation h1 { color: #f0ece8; }
+
+#presentation p {
+  color: #d4c8c0;
+  max-width: 560px;
+  margin: 0 auto 16px auto;
+}
+
+/* Hover sur le bloc présentation — légère lueur */
+#presentation:hover {
+  box-shadow: 0 12px 40px rgba(74, 16, 32, 0.35);
+  transition: box-shadow 0.4s ease;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px !important;
+}
+
+.badges span {
+  background-color: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #f0ece8;
+  transition: background-color 0.3s ease;
+}
+
+.badges span:hover {
+  background-color: rgba(255,255,255,0.22);
+}
+
+.badges i {
+  color: #c89a6a;
+  margin-right: 6px;
+}
+
+#profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #c89a6a;
+  margin-bottom: 28px;
+  transition: transform 0.4s ease;
+}
+
+#profile-pic:hover {
+  transform: scale(1.05);
+}
+
+
+/* ============================================
+   BLOC 2 — PASSIONS  (cartes blanches)
+   ============================================ */
+#passions h2 {
+  color: var(--bordeaux-dark);
+  border-left: 5px solid var(--bordeaux);
+  padding-left: 14px;
+  margin-bottom: 28px;
+}
+
+.passions-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.passion-card {
+  background: var(--blanc);
+  padding: 28px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, border-left 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.passion-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-left: 3px solid var(--bordeaux);
+}
+
+.passion-card:nth-child(even):hover {
+  border-left: 3px solid var(--vert);
+}
+
+.passion-card i {
+  color: var(--bordeaux);
+  margin-right: 6px;
+}
+
+.passion-card:nth-child(even) i {
+  color: var(--vert);
+}
+
+.passion-card p {
+  color: var(--texte-doux);
+  font-size: 0.9rem;
+}
+
+
+/* ============================================
+   BLOC 3 — ÉCOLE  (vert)
+   ============================================ */
+#ecole {
+  background-color: var(--vert);
+  color: #e8f0eb;
+  animation: fadeUp 0.6s ease 0.2s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#ecole:hover {
+  box-shadow: 0 12px 40px rgba(45, 90, 61, 0.35);
+  transition: box-shadow 0.4s ease;
+}
+
+#ecole h2 { color: #e8f0eb; }
+
+#ecole p {
+  color: #c8ddd0;
+  max-width: 560px;
+  margin: 0 auto 28px auto;
+  font-size: 0.95rem;
+}
+
+#ecole a {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.15);
+  color: #e8f0eb;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#ecole a:hover {
+  background-color: rgba(255,255,255,0.25);
+  transform: scale(1.03);
+  color: #ffffff;
+}
+
+
+/* ============================================
+   BLOC 4 — LIENS  (cartes blanches)
+   ============================================ */
+#liens h2 {
+  color: var(--bordeaux-dark);
+  border-left: 5px solid var(--vert);
+  padding-left: 14px;
+  margin-bottom: 28px;
+}
+
+.liens-liste {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.liens-liste li a {
+  display: block;
+  background: var(--blanc);
+  color: var(--texte);
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  font-size: 0.95rem;
+  border-left: 3px solid transparent;
+  transition: box-shadow 0.3s ease, border-left 0.3s ease;
+}
+
+.liens-liste li a:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.11);
+  border-left: 3px solid var(--bordeaux);
+}
+
+.liens-liste li:nth-child(even) a:hover {
+  border-left: 3px solid var(--vert);
+}
+
+.liens-liste li a i {
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #aaaaaa;
+  font-size: 0.85rem;
+}
+
+footer i { color: var(--bordeaux); }
+
+
+/* ============================================
+   ANIMATION
+   ============================================ */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 720px) {
+  #presentation,
+  #ecole {
+    margin: 20px 16px;
+    padding: 40px 24px;
+  }
+
+  #passions,
+  #liens {
+    margin: 20px 16px;
+    padding: 0;
+  }
+
+  .passion-card {
+    width: 100%;
+  }
+
+  .badges {
+    flex-direction: column;
+    align-items: center;
+  }
+}
